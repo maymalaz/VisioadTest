@@ -30,14 +30,7 @@ class _StoryDetailsPageState extends State<StoryDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
-    // I put it here because it is not updated when apply search because they don't enter the initState again
-    // so I should but it here to update it when chane list item
-
-    // Check if somethings happened and do not return media
-    // If everything seems to be in order we will display the image
-    // else display placeholder instead
-
-    // Big image for view and zoom it
+  // image
     if (widget.model.multimedia != null &&
         widget.model.multimedia!.isNotEmpty) {
       imageUrl = widget.model.multimedia!.first.url;
@@ -187,7 +180,6 @@ class _StoryDetailsPageState extends State<StoryDetailsPage> {
                         ),
 
                         // Caption
-                        // Display Caption when image not valid
                         if (imageUrl == null || imageUrl == "")
                           Positioned(
                             bottom: 10.h,

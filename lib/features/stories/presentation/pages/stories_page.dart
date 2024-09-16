@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import 'package:test_visioad_app/core/common%20feature/presentation/pages/background_page.dart';
 import 'package:test_visioad_app/core/common%20feature/presentation/widgets/app_loader.dart';
@@ -41,7 +40,6 @@ class _StoriesPageState extends ConsumerState<StoriesPage> {
   StorySectionEnum selectedStorySection = StorySectionEnum.home;
   StorySectionEnum tempStorySection = StorySectionEnum.home;
 
-  // Grid/List View
   bool isListView = true;
 
   OutlineInputBorder defaultBorder = OutlineInputBorder(
@@ -124,7 +122,6 @@ class _StoriesPageState extends ConsumerState<StoriesPage> {
     );
   }
 
-// Stories grid view, Loading and Error Widget
   _buildListStories(BuildContext context, List<StoryModel> stories) {
     return SmartRefresher(
       enablePullDown: true,
@@ -181,63 +178,10 @@ class _StoriesPageState extends ConsumerState<StoriesPage> {
     );
   }
 
-  // Refresh method called when pull down list
   void _onRefresh() async {
     _getStories();
   }
 
-  // Build actions in app bar
-  List<Widget> _buildActions() {
-    return [
-      // List view
-      CircleAvatar(
-        backgroundColor: isListView
-            ? Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.5)
-            : AppColors.transparent,
-        radius: 15.sp,
-        child: IconButton(
-          padding: EdgeInsets.zero,
-          onPressed: () {
-            setState(() {
-              isListView = true;
-            });
-          },
-          icon: Icon(
-            Icons.format_list_bulleted,
-            color: isListView
-                ? Theme.of(context).scaffoldBackgroundColor
-                : Theme.of(context).iconTheme.color,
-            size: 20.sp,
-          ),
-        ),
-      ),
-
-      // Grid view
-      CircleAvatar(
-        backgroundColor: !isListView
-            ? Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.5)
-            : AppColors.transparent,
-        radius: 15.sp,
-        child: Center(
-          child: IconButton(
-            padding: EdgeInsets.zero,
-            onPressed: () {
-              setState(() {
-                isListView = false;
-              });
-            },
-            icon: Icon(
-              Icons.grid_view_rounded,
-              color: !isListView
-                  ? Theme.of(context).scaffoldBackgroundColor
-                  : Theme.of(context).iconTheme.color,
-              size: 20.sp,
-            ),
-          ),
-        ),
-      ),
-    ];
-  }
 
   // Get all stories
   void _getStories() {
