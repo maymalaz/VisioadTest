@@ -158,6 +158,7 @@ class _StoriesPageState extends ConsumerState<StoriesPage> {
               print('Connected to WiFi');
               internet_checker= true;
 
+
             } else {
               print('No Internet Connection');
               internet_checker= false;
