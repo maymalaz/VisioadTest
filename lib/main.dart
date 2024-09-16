@@ -36,6 +36,7 @@ class App extends ConsumerWidget {
       splitScreenMode: true,
       builder: (context, child) {
         return MaterialApp(
+
           useInheritedMediaQuery: false,
           title: 'Stories App',
           onGenerateRoute: AppRouter.generateRoute,
