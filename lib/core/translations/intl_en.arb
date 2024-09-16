@@ -1,0 +1,17 @@
+{
+  "arabic": "العربية",
+  "english": "English",
+  "filter": "Filter",
+  "search": "Search",
+  "required_field": "Required field",
+  "dark_skin": "Dark Skin",
+  "light_skin": "Light Skin",
+  "language": "Language",
+  "search_by_section": "Search by section",
+  "section": "Section",
+  "reset": "Reset",
+  "confirm": "Confirm",
+  "no_data": "No Data",
+  "see_more": "See more",
+  "story_details": "Story Details"
+}

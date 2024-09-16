@@ -1,0 +1,17 @@
+{
+  "arabic": "العربية",
+  "english": "English",
+  "filter": "الفلترة",
+  "search": "البحث",
+  "required_field": "الحقل مطلوب",
+  "dark_skin": "المظهر الليلي",
+  "light_skin": "المظهر النهاري",
+  "language": "اللغة",
+  "search_by_section": "البحص عن طريق القسم",
+  "section": "القسم",
+  "reset": "تهيئة",
+  "confirm": "تأكيد",
+  "no_data": "لا يوجد بيانات",
+  "see_more": "عرض المزيد",
+  "story_details": "تفاصيل القصة"
+}
